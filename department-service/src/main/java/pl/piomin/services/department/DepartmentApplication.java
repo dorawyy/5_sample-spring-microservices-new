@@ -42,11 +42,11 @@ public class DepartmentApplication {
 	
 	@Bean
 	DepartmentRepository repository() {
-		DepartmentRepository repository = new DepartmentRepository();
-		repository.add(new Department(1L, "Development"));
-		repository.add(new Department(1L, "Operations"));
-		repository.add(new Department(2L, "Development"));
-		repository.add(new Department(2L, "Operations"));		
+		DepartmentRepository repository = new DepartmentRepository(); // call 
+		repository.add(new Department(1L, "Development")); // call // call
+		repository.add(new Department(1L, "Operations")); // call // call
+		repository.add(new Department(2L, "Development")); // call // call
+		repository.add(new Department(2L, "Operations")); // call // call
 		return repository;
 	}
 	

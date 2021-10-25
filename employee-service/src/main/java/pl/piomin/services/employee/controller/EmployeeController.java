@@ -25,31 +25,31 @@ public class EmployeeController {
 	@PostMapping("/")
 	public Employee add(@RequestBody Employee employee) {
 		LOGGER.info("Employee add: {}", employee);
-		return repository.add(employee);
+		return repository.add(employee); // call 
 	}
 	
 	@GetMapping("/{id}")
 	public Employee findById(@PathVariable("id") Long id) {
 		LOGGER.info("Employee find: id={}", id);
-		return repository.findById(id);
+		return repository.findById(id); // call 
 	}
 	
 	@GetMapping("/")
 	public List<Employee> findAll() {
 		LOGGER.info("Employee find");
-		return repository.findAll();
+		return repository.findAll(); // call 
 	}
 	
 	@GetMapping("/department/{departmentId}")
 	public List<Employee> findByDepartment(@PathVariable("departmentId") Long departmentId) {
 		LOGGER.info("Employee find: departmentId={}", departmentId);
-		return repository.findByDepartment(departmentId);
+		return repository.findByDepartment(departmentId); // call 
 	}
 	
 	@GetMapping("/organization/{organizationId}")
 	public List<Employee> findByOrganization(@PathVariable("organizationId") Long organizationId) {
 		LOGGER.info("Employee find: organizationId={}", organizationId);
-		return repository.findByOrganization(organizationId);
+		return repository.findByOrganization(organizationId); // call
 	}
 	
 }

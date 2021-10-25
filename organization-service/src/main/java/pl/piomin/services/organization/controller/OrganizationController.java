@@ -31,42 +31,42 @@ public class OrganizationController {
 	@PostMapping
 	public Organization add(@RequestBody Organization organization) {
 		LOGGER.info("Organization add: {}", organization);
-		return repository.add(organization);
+		return repository.add(organization); // call 
 	}
 	
 	@GetMapping
 	public List<Organization> findAll() {
 		LOGGER.info("Organization find");
-		return repository.findAll();
+		return repository.findAll(); // call 
 	}
 	
 	@GetMapping("/{id}")
 	public Organization findById(@PathVariable("id") Long id) {
 		LOGGER.info("Organization find: id={}", id);
-		return repository.findById(id);
+		return repository.findById(id); // call 
 	}
 
 	@GetMapping("/{id}/with-departments")
 	public Organization findByIdWithDepartments(@PathVariable("id") Long id) {
 		LOGGER.info("Organization find: id={}", id);
-		Organization organization = repository.findById(id);
-		organization.setDepartments(departmentClient.findByOrganization(organization.getId()));
+		Organization organization = repository.findById(id); // call 
+		organization.setDepartments(departmentClient.findByOrganization(organization.getId())); // call // call, missing (findByOrganization) // call 
 		return organization;
 	}
 	
 	@GetMapping("/{id}/with-departments-and-employees")
 	public Organization findByIdWithDepartmentsAndEmployees(@PathVariable("id") Long id) {
 		LOGGER.info("Organization find: id={}", id);
-		Organization organization = repository.findById(id);
-		organization.setDepartments(departmentClient.findByOrganizationWithEmployees(organization.getId()));
+		Organization organization = repository.findById(id); // call 
+		organization.setDepartments(departmentClient.findByOrganizationWithEmployees(organization.getId())); // call // call, missing // call 
 		return organization;
 	}
 	
 	@GetMapping("/{id}/with-employees")
 	public Organization findByIdWithEmployees(@PathVariable("id") Long id) {
 		LOGGER.info("Organization find: id={}", id);
-		Organization organization = repository.findById(id);
-		organization.setEmployees(employeeClient.findByOrganization(organization.getId()));
+		Organization organization = repository.findById(id); // call 
+		organization.setEmployees(employeeClient.findByOrganization(organization.getId())); // call // call, missing // call 
 		return organization;
 	}
 	

@@ -12,13 +12,13 @@ public class EmployeeRepository {
 	private List<Employee> employees = new ArrayList<>();
 	
 	public Employee add(Employee employee) {
-		employee.setId((long) (employees.size()+1));
+		employee.setId((long) (employees.size()+1)); // call 
 		employees.add(employee);
 		return employee;
 	}
 	
 	public Employee findById(Long id) {
-		Optional<Employee> employee = employees.stream().filter(a -> a.getId().equals(id)).findFirst();
+		Optional<Employee> employee = employees.stream().filter(a -> a.getId().equals(id)).findFirst(); // call (getId)
 		if (employee.isPresent())
 			return employee.get();
 		else
@@ -30,11 +30,11 @@ public class EmployeeRepository {
 	}
 	
 	public List<Employee> findByDepartment(Long departmentId) {
-		return employees.stream().filter(a -> a.getDepartmentId().equals(departmentId)).collect(Collectors.toList());
+		return employees.stream().filter(a -> a.getDepartmentId().equals(departmentId)).collect(Collectors.toList()); // call (getDepartmentId)
 	}
 	
 	public List<Employee> findByOrganization(Long organizationId) {
-		return employees.stream().filter(a -> a.getOrganizationId().equals(organizationId)).collect(Collectors.toList());
+		return employees.stream().filter(a -> a.getOrganizationId().equals(organizationId)).collect(Collectors.toList()); // call (getOrganizationId)
 	}
 	
 }

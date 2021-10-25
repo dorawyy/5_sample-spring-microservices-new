@@ -11,13 +11,13 @@ public class OrganizationRepository {
 	private List<Organization> organizations = new ArrayList<>();
 	
 	public Organization add(Organization organization) {
-		organization.setId((long) (organizations.size()+1));
+		organization.setId((long) (organizations.size()+1)); // call 
 		organizations.add(organization);
 		return organization;
 	}
 	
 	public Organization findById(Long id) {
-		Optional<Organization> organization = organizations.stream().filter(a -> a.getId().equals(id)).findFirst();
+		Optional<Organization> organization = organizations.stream().filter(a -> a.getId().equals(id)).findFirst(); // call (getId)
 		if (organization.isPresent())
 			return organization.get();
 		else

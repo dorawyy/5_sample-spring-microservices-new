@@ -42,9 +42,9 @@ public class OrganizationApplication {
 	
 	@Bean
 	OrganizationRepository repository() {
-		OrganizationRepository repository = new OrganizationRepository();
-		repository.add(new Organization("Microsoft", "Redmond, Washington, USA"));
-		repository.add(new Organization("Oracle", "Redwood City, California, USA"));	
+		OrganizationRepository repository = new OrganizationRepository(); // call 
+		repository.add(new Organization("Microsoft", "Redmond, Washington, USA")); // call // call 
+		repository.add(new Organization("Oracle", "Redwood City, California, USA")); // call // call
 		return repository;
 	}
 	
