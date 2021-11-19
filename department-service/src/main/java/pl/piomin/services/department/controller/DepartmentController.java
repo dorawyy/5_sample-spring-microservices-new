@@ -53,7 +53,7 @@ public class DepartmentController {
 	public List<Department> findByOrganizationWithEmployees(@PathVariable("organizationId") Long organizationId) {
 		LOGGER.info("Department find: organizationId={}", organizationId);
 		List<Department> departments = repository.findByOrganization(organizationId); // call
-		departments.forEach(d -> d.setEmployees(employeeClient.findByDepartment(d.getId()))); // call lambda // call, missing findByDepartment // call lambda
+		departments.forEach(d -> d.setEmployees(employeeClient.findByDepartment(d.getId()))); // call lambda // call, missing, repo // call lambda
 		return departments;
 	}
 	

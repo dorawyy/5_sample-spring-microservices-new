@@ -50,7 +50,7 @@ public class OrganizationController {
 	public Organization findByIdWithDepartments(@PathVariable("id") Long id) {
 		LOGGER.info("Organization find: id={}", id);
 		Organization organization = repository.findById(id); // call 
-		organization.setDepartments(departmentClient.findByOrganization(organization.getId())); // call // call, missing (findByOrganization) // call 
+		organization.setDepartments(departmentClient.findByOrganization(organization.getId())); // call // call, missing, client // call 
 		return organization;
 	}
 	
@@ -58,7 +58,7 @@ public class OrganizationController {
 	public Organization findByIdWithDepartmentsAndEmployees(@PathVariable("id") Long id) {
 		LOGGER.info("Organization find: id={}", id);
 		Organization organization = repository.findById(id); // call 
-		organization.setDepartments(departmentClient.findByOrganizationWithEmployees(organization.getId())); // call // call, missing // call 
+		organization.setDepartments(departmentClient.findByOrganizationWithEmployees(organization.getId())); // call // call, missing, client // call 
 		return organization;
 	}
 	
@@ -66,7 +66,7 @@ public class OrganizationController {
 	public Organization findByIdWithEmployees(@PathVariable("id") Long id) {
 		LOGGER.info("Organization find: id={}", id);
 		Organization organization = repository.findById(id); // call 
-		organization.setEmployees(employeeClient.findByOrganization(organization.getId())); // call // call, missing // call 
+		organization.setEmployees(employeeClient.findByOrganization(organization.getId())); // call // call, missing, client // call 
 		return organization;
 	}
 	
