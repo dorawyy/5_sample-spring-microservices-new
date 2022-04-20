@@ -41,16 +41,16 @@ public class EmployeeApplication {
 	@Bean
 	EmployeeRepository repository() {
 		EmployeeRepository repository = new EmployeeRepository(); // call
-		repository.add(new Employee(1L, 1L, "John Smith", 34, "Analyst")); // call // call 
-		repository.add(new Employee(1L, 1L, "Darren Hamilton", 37, "Manager")); // call // call
-		repository.add(new Employee(1L, 1L, "Tom Scott", 26, "Developer")); // call // call
-		repository.add(new Employee(1L, 2L, "Anna London", 39, "Analyst"));	// call // call	
-		repository.add(new Employee(1L, 2L, "Patrick Dempsey", 27, "Developer")); // call // call
-		repository.add(new Employee(2L, 3L, "Kevin Price", 38, "Developer")); // call // call
-		repository.add(new Employee(2L, 3L, "Ian Scott", 34, "Developer")); // call // call
-		repository.add(new Employee(2L, 3L, "Andrew Campton", 30, "Manager")); // call // call
-		repository.add(new Employee(2L, 4L, "Steve Franklin", 25, "Developer")); // call // call
-		repository.add(new Employee(2L, 4L, "Elisabeth Smith", 30, "Developer")); // call // call
+		repository.add(new Employee("1", "1", "John Smith", 34, "Analyst")); // call // call 
+		repository.add(new Employee("1", "1", "Darren Hamilton", 37, "Manager")); // call // call
+		repository.add(new Employee("1", "1", "Tom Scott", 26, "Developer")); // call // call
+		repository.add(new Employee("1", "2", "Anna London", 39, "Analyst"));	// call // call	
+		repository.add(new Employee("1", "2", "Patrick Dempsey", 27, "Developer")); // call // call
+		repository.add(new Employee("2", "3", "Kevin Price", 38, "Developer")); // call // call
+		repository.add(new Employee("2", "3", "Ian Scott", 34, "Developer")); // call // call
+		repository.add(new Employee("2", "3", "Andrew Campton", 30, "Manager")); // call // call
+		repository.add(new Employee("2", "4", "Steve Franklin", 25, "Developer")); // call // call
+		repository.add(new Employee("2", "4", "Elisabeth Smith", 30, "Developer")); // call // call
 		return repository;
 	}
 	

@@ -16,38 +16,38 @@ public class EmployeeRepositoryTest {
 
     @Test
     public void testAddEmployee() {
-        Employee employee = new Employee(1L, 1L, "Test Test", 100, "Test");
+        Employee employee = new Employee("1", "1", "Test Test", 100, "Test");
         employee = repository.add(employee);
         Assert.notNull(employee, "Employee is null.");
-        Assert.isTrue(employee.getId() == 1L, "Employee bad id.");
+        Assert.isTrue(employee.getId() == "1", "Employee bad id.");
     }
 
     @Test
     public void testFindAll() {
         List<Employee> employees = repository.findAll();
         Assert.isTrue(employees.size() == 1, "Employees size is wrong.");
-        Assert.isTrue(employees.get(0).getId() == 1L, "Employee bad id.");
+        Assert.isTrue(employees.get(0).getId() == "1", "Employee bad id.");
     }
 
     @Test
     public void testFindByDepartment() {
-        List<Employee> employees = repository.findByDepartment(1L);
+        List<Employee> employees = repository.findByDepartment("1");
         Assert.isTrue(employees.size() == 1, "Employees size is wrong.");
-        Assert.isTrue(employees.get(0).getId() == 1L, "Employee bad id.");
+        Assert.isTrue(employees.get(0).getId() == "1", "Employee bad id.");
     }
 
     @Test
     public void testFindByOrganization() {
-        List<Employee> employees = repository.findByOrganization(1L);
+        List<Employee> employees = repository.findByOrganization("1");
         Assert.isTrue(employees.size() == 1, "Employees size is wrong.");
-        Assert.isTrue(employees.get(0).getId() == 1L, "Employee bad id.");
+        Assert.isTrue(employees.get(0).getId() == "1", "Employee bad id.");
     }
 
     @Test
     public void testFindById() {
-        Employee employee = repository.findById(1L);
+        Employee employee = repository.findById("1");
         Assert.notNull(employee, "Employee not found.");
-        Assert.isTrue(employee.getId() == 1L, "Employee bad id.");
+        Assert.isTrue(employee.getId() == "1", "Employee bad id.");
     }
 
 }

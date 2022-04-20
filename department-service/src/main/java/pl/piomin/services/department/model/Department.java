@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Department {
 
-	private Long id;
-	private Long organizationId;
+	private String id;
+	private String organizationId;
 	private String name;
 	private List<Employee> employees = new ArrayList<>();
 
@@ -14,25 +14,25 @@ public class Department {
 		
 	}
 
-	public Department(Long organizationId, String name) {
+	public Department(String organizationId, String name) {
 		super();
 		this.organizationId = organizationId;
 		this.name = name;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public Long getOrganizationId() {
+	public String getOrganizationId() {
 		return organizationId;
 	}
 
-	public void setOrganizationId(Long organizationId) {
+	public void setOrganizationId(String organizationId) {
 		this.organizationId = organizationId;
 	}
 

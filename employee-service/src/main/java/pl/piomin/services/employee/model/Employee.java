@@ -2,9 +2,9 @@ package pl.piomin.services.employee.model;
 
 public class Employee {
 
-	private Long id;
-	private Long organizationId;
-	private Long departmentId;
+	private String id;
+	private String organizationId;
+	private String departmentId;
 	private String name;
 	private int age;
 	private String position;
@@ -13,7 +13,7 @@ public class Employee {
 
 	}
 	
-	public Employee(Long organizationId, Long departmentId, String name, int age, String position) {
+	public Employee(String organizationId, String departmentId, String name, int age, String position) {
 		this.organizationId = organizationId;
 		this.departmentId = departmentId;
 		this.name = name;
@@ -21,27 +21,27 @@ public class Employee {
 		this.position = position;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public Long getOrganizationId() {
+	public String getOrganizationId() {
 		return organizationId;
 	}
 
-	public void setOrganizationId(Long organizationId) {
+	public void setOrganizationId(String organizationId) {
 		this.organizationId = organizationId;
 	}
 
-	public Long getDepartmentId() {
+	public String getDepartmentId() {
 		return departmentId;
 	}
 
-	public void setDepartmentId(Long departmentId) {
+	public void setDepartmentId(String departmentId) {
 		this.departmentId = departmentId;
 	}
 

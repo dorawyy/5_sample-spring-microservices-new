@@ -2,8 +2,12 @@ package pl.piomin.services.gateway;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.PathItem;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.springdoc.core.GroupedOpenApi;
 import org.springdoc.core.customizers.OpenApiCustomiser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +25,7 @@ import java.util.List;
 @EnableDiscoveryClient
 public class GatewayApplication {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(GatewayApplication.class);
+	private static final Logger logger = LogManager.getLogger(GatewayApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(GatewayApplication.class, args);
