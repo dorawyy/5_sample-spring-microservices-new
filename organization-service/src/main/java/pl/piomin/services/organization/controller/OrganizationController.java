@@ -4,8 +4,7 @@ import java.util.List;
 
 // import org.slf4j.Logger;
 // import org.slf4j.LoggerFactory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import pl.piomin.services.organization.Logger;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,7 @@ import pl.piomin.services.organization.repository.OrganizationRepository;
 public class OrganizationController {
 
 	// private static final Logger LOGGER = LoggerFactory.getLogger(OrganizationController.class);
-	private static Logger logger = LogManager.getLogger(OrganizationController.class);
+	private static Logger logger = new Logger();
 	
 	@Autowired
 	OrganizationRepository repository;
@@ -37,7 +36,7 @@ public class OrganizationController {
 	@PostMapping
 	public Organization add(@RequestBody Organization organization) {
 		// LOGGER.info("Organization add: {}", organization);
-		logger.info("Organization add: {}", organization);
+		logger.info("Organization add: " + organization);
 		return repository.add(organization); // call 
 	}
 	
@@ -51,14 +50,14 @@ public class OrganizationController {
 	@GetMapping("/{id}")
 	public Organization findById(@PathVariable("id") String id) {
 		// LOGGER.info("Organization find: id={}", id);
-		logger.info("Organization find: id={}", id);
+		logger.info("Organization find: id=" + id);
 		return repository.findById(id); // call 
 	}
 
 	@GetMapping("/{id}/with-departments") // select this
 	public Organization findByIdWithDepartments(@PathVariable("id") String id) {
 		// LOGGER.info("Organization find: id={}", id);
-		logger.info("Organization find: id={}", id);
+		logger.info("Organization find: id=" + id);
 		List<Department> departments = departmentClient.findByOrganization(id);
 		Organization organization = repository.findById(id); // call 
 		organization.setDepartments(departments);
@@ -69,7 +68,7 @@ public class OrganizationController {
 	@GetMapping("/{id}/with-departments-and-employees")
 	public Organization findByIdWithDepartmentsAndEmployees(@PathVariable("id") String id) {
 		// LOGGER.info("Organization find: id={}", id);
-		logger.info("Organization find: id={}", id);
+		logger.info("Organization find: id=" + id);
 		Organization organization = repository.findById(id); // call 
 		organization.setDepartments(departmentClient.findByOrganizationWithEmployees(organization.getId())); // call // call, missing, client // call 
 		return organization;
@@ -78,7 +77,7 @@ public class OrganizationController {
 	@GetMapping("/{id}/with-employees")
 	public Organization findByIdWithEmployees(@PathVariable("id") String id) {
 		// LOGGER.info("Organization find: id={}", id);
-		logger.info("Organization find: id={}", id);
+		logger.info("Organization find: id=" + id);
 		Organization organization = repository.findById(id); // call 
 		organization.setEmployees(employeeClient.findByOrganization(organization.getId())); // call // call, missing, client // call 
 		return organization;
